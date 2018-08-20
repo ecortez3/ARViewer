@@ -1,9 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-
 import {StyleSheet} from 'react-native';
-
 import {
   ViroScene,
   ViroText,
@@ -11,11 +9,10 @@ import {
 } from 'react-viro';
 
 export default class HelloWorldScene extends Component {
-
   constructor() {
     super();
 
-    this.state = {} // Set initial state here
+    this.state = {}
   }
 
   render() {
@@ -26,7 +23,6 @@ export default class HelloWorldScene extends Component {
       </ViroScene>
     );
   }
-
 }
 
 var styles = StyleSheet.create({
