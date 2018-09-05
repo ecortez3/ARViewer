@@ -26,13 +26,13 @@ var ARScene = createReactClass({
 
   render: function() {
     return (
-      <ViroARScene onTrackingUpdated={()=>{this.setState({ text : "Look Around! What do you see?" })}}>
+      <ViroARScene onTrackingUpdated={()=>{this.setState({ text: "What do you see" })}}>
         <ViroText 
             text={this.state.text} 
             scale={[.1, .1, .1]} 
             height={1} 
             width={4} 
-            position={[0, .5, -1]} 
+            position={[0, .2, -1]} 
             style={styles.textStyle} 
         />
         <ViroAmbientLight color={"#aaaaaa"} />
@@ -44,24 +44,24 @@ var ARScene = createReactClass({
             color="#ffffff" 
             castsShadow={true} 
         />
-        <Viro3DObject
-            source={require('./res/bb8_animated/scene.gltf')}
-            resources={[
-              require('./res/bb8_animated/scene.bin'),
-              require('./res/bb8_animated/textures/Scene_Material1_baseColor.jpeg'),
-              require('./res/bb8_animated/textures/Scene_Material1_emissive.jpeg'),
-              require('./res/bb8_animated/textures/material_baseColor.jpeg'),
-              require('./res/bb8_animated/textures/Scene_Material1_metallicRoughness.png'),
-              require('./res/bb8_animated/textures/Scene_Material_metallicRoughness.png'),
-              require('./res/bb8_animated/textures/Scene_Material_baseColor.jpeg'),
-              require('./res/bb8_animated/textures/Scene_Material_emissive.jpeg')
-            ]}
-            type="GLTF"
-            position={[0, 0, -1]}
-            scale={[.2, .2, .2]}
-            dragType="FixedDistance" 
-            onDrag={()=>{}}
-        />
+        <ViroNode 
+          position={[0, -1, 0]}
+          dragType="FixedToWorld" 
+          onDrag={()=>{}}>
+          <Viro3DObject
+              source={require('./res/free__hand_painted_potions/scene.gltf')}
+              resources={[
+                require('./res/free__hand_painted_potions/scene.bin'),
+                require('./res/free__hand_painted_potions/textures/01_-_Default_baseColor.png'),
+                require('./res/free__hand_painted_potions/textures/02_-_Default_baseColor.png'),
+                require('./res/free__hand_painted_potions/textures/03_-_Default_baseColor.png'),
+                require('./res/free__hand_painted_potions/textures/07_-_Default_baseColor.png')
+              ]}
+              type="GLTF"
+              position={[0, -10, -15]}
+              scale={[.05, .05, .05]}
+          />
+          </ViroNode>
       </ViroARScene>
     );
   }

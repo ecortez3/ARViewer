@@ -17,8 +17,8 @@ var sharedProps = {
   apiKey: '50EF9586-C367-4A82-B110-79B6B9471439',
 }
 
-var InitialARScene = require('./js/PsychoSmile');
-// var InitialARScene = require('./js/ARScene');
+// var InitialARScene = require('./js/PsychoSmile');
+var InitialARScene = require('./js/ARScene');
 var InitialVRScene = require('./js/HelloWorldScene');
 
 var UNSET = 'UNSET';
